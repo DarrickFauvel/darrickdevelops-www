@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.form {
+  background-color: var(--gray-800);
+  border-radius: var(--radius-2);
+  padding: var(--size-3);
+  margin-bottom: var(--size-9);
+  width: 100%;
+  max-width: 40rem;
+
+  label,
+  input {
+    display: block;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+  }
+
+  label {
+    margin-bottom: var(--size-1);
+  }
+
+  .form-group {
+    margin-bottom: var(--size-3);
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
