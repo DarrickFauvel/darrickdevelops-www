@@ -1,8 +1,51 @@
+import { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 import { ChatAlt2Icon } from '@heroicons/react/solid'
+
 // import Form from './Form'
 import Socials from './Socials'
 
 const Contact = () => {
+  const form = useRef()
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [formValue, setFormValue] = useState({
+    user_name: '',
+    user_email: '',
+    contact_number: '',
+    message: ''
+  })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+
+    setFormValue((prevState) => {
+      return {
+        ...prevState,
+        [name]: value
+      }
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
+      (result) => {
+        setIsSubmitted(true)
+        console.log(result.text)
+      },
+      (error) => {
+        console.log(error.text)
+      }
+    )
+  }
+
+  const { name, email, phone, message } = formValue
+
   return (
     <section id='contact'>
       <div className='container contact-container'>
@@ -14,44 +57,68 @@ const Contact = () => {
           </p>
         </div>
 
-        <form className='form'>
-          <div className='form-group'>
-            <label htmlFor='name'>Name</label>
-            <input
-              type='text'
-              className='form-control'
-              id='name'
-              placeholder='Enter name'
-              required
-            />
+        {isSubmitted ? (
+          <div className='contact-thanks'>
+            <p>Thank you for contacting me!</p>
           </div>
-          <div className='form-group'>
-            <label htmlFor='email'>Email address</label>
-            <input
-              type='email'
-              className='form-control'
-              id='email'
-              aria-describedby='emailHelp'
-              placeholder='Enter email'
-              required
-            />
-            <small id='emailHelp' className='form-text text-muted'>
-              I'll never share your email with anyone else.
-            </small>
-          </div>
-          <div className='form-group'>
-            <label htmlFor='message'>Message</label>
-            <textarea
-              className='form-control'
-              id='message'
-              rows='3'
-              placeholder='Enter message'
-              required></textarea>
-          </div>
-          <button type='submit' className='btn btn-primary'>
-            Submit
-          </button>
-        </form>
+        ) : (
+          <form className='form' onSubmit={handleSubmit} ref={form}>
+            <div className='form-group'>
+              <label htmlFor='user_name'>Name</label>
+              <input
+                type='text'
+                name='user_name'
+                className='form-control'
+                placeholder='Enter name'
+                required
+                value={name}
+                onChange={handleChange}
+              />
+            </div>
+            <div className='form-group'>
+              <label htmlFor='user_email'>Email address</label>
+              <input
+                type='email'
+                name='user_email'
+                className='form-control'
+                aria-describedby='emailHelp'
+                placeholder='Enter email'
+                required
+                value={email}
+                onChange={handleChange}
+              />
+              <small id='emailHelp' className='form-text text-muted'>
+                I'll never share your email with anyone else.
+              </small>
+            </div>
+            <div className='form-group'>
+              <label htmlFor='contact_number'>Phone</label>
+              <input
+                type='text'
+                name='contact_number'
+                className='form-control'
+                placeholder='Enter phone'
+                value={phone}
+                onChange={handleChange}
+              />
+            </div>
+            <div className='form-group'>
+              <label htmlFor='message'>Message</label>
+              <textarea
+                className='form-control'
+                name='message'
+                id='message'
+                rows='3'
+                placeholder='Enter message'
+                required
+                value={message}
+                onChange={handleChange}></textarea>
+            </div>
+            <button type='submit' className='btn btn-primary'>
+              Send
+            </button>
+          </form>
+        )}
 
         <Socials />
       </div>
