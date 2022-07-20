@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@emailjs/browser': ^3.6.2
   '@heroicons/react': ^1.0.6
   '@types/react': ^18.0.0
   '@types/react-dom': ^18.0.0
@@ -16,6 +17,7 @@ specifiers:
   vite: ^2.9.9
 
 dependencies:
+  '@emailjs/browser': 3.6.2
   '@heroicons/react': 1.0.6_react@18.2.0
   dompurify: 2.3.8
   framer-motion: 6.3.16_react-dom@18.2.0+react@18.2.0
@@ -301,6 +303,11 @@ packages:
       '@babel/helper-validator-identifier': 7.16.7
       to-fast-properties: 2.0.0
     dev: true
+
+  /@emailjs/browser/3.6.2:
+    resolution: {integrity: sha512-Swc8w+vwDX4XPy6tPegOFGSwHqNiEmEsIKbtAkqHo2WqnS0ORZUnnuZats2R3XqwfxNQD0F6RwnlVWHIMf6sCQ==}
+    engines: {node: '>=14.0.0'}
+    dev: false
 
   /@emotion/is-prop-valid/0.8.8:
     resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
