@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { CodeIcon } from '@heroicons/react/solid'
-import { projects as data, tabs } from '../../data'
+import { projects as data, tabs } from '../../data/data'
 import Tabs from './Tabs'
 import Projects from './Projects'
 
