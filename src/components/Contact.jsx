@@ -1,12 +1,14 @@
 import { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import { ChatAlt2Icon } from '@heroicons/react/solid'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 // import Form from './Form'
 import Socials from './Socials'
 
 const Contact = () => {
   const form = useRef()
+  const [isVerified, setIsVerified] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [formValue, setFormValue] = useState({
     user_name: '',
@@ -42,6 +44,11 @@ const Contact = () => {
         console.log(error.text)
       }
     )
+  }
+
+  const onChange = (value) => {
+    console.log('Captcha value:', value)
+    setIsVerified(true)
   }
 
   const { name, email, phone, message } = formValue
@@ -114,7 +121,14 @@ const Contact = () => {
                 value={message}
                 onChange={handleChange}></textarea>
             </div>
-            <button type='submit' className='btn btn-primary'>
+            <ReCAPTCHA
+              sitekey='6LfLZjYhAAAAAH8hsfUFy3YK2Ckpzo40xv2DYteG'
+              onChange={onChange}
+            />
+            <button
+              type='submit'
+              className='btn btn-primary'
+              disabled={!isVerified}>
               Send
             </button>
           </form>
