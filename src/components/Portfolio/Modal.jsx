@@ -63,7 +63,7 @@ const Modal = ({ children, project, isModalOpen, closeModal }) => {
           </ul>
 
           <div className="modal-details">
-            <header className="header">ABOUT THIS PROJECT</header>
+            <header className="modal-details-header">ABOUT THIS PROJECT</header>
             <p>
               <span>Client</span>
               {project.client}

@@ -139,15 +139,15 @@ p.modal-stack {
   border-radius: var(--radius-2);
   padding: var(--size-3);
   padding-bottom: var(--size-1);
+}
 
-  .header {
-    text-align: center;
-    border-bottom: 1px dashed var(--gray-6);
-    padding-bottom: 0.3em;
-    margin-top: -0.5em;
-    margin-bottom: 1em;
-    background-color: transparent;
-  }
+.modal-details-header {
+  text-align: center;
+  border-bottom: 1px dashed var(--gray-6);
+  padding-bottom: 0.3em;
+  margin-top: -0.5em;
+  margin-bottom: 1em;
+  background-color: transparent;
 }
 
 .btn {
