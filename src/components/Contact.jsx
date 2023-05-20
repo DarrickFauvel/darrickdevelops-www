@@ -1,20 +1,20 @@
-import { useState, useRef } from 'react'
-import emailjs from '@emailjs/browser'
-import { ChatAlt2Icon } from '@heroicons/react/solid'
-import ReCAPTCHA from 'react-google-recaptcha'
+import { useState, useRef } from "react"
+import emailjs from "@emailjs/browser"
+import { ChatAlt2Icon } from "@heroicons/react/solid"
+import ReCAPTCHA from "react-google-recaptcha"
 
 // import Form from './Form'
-import Socials from './Socials'
+import Socials from "./Socials"
 
 const Contact = () => {
   const form = useRef()
   const [isVerified, setIsVerified] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [formValue, setFormValue] = useState({
-    user_name: '',
-    user_email: '',
-    contact_number: '',
-    message: ''
+    user_name: "",
+    user_email: "",
+    contact_number: "",
+    message: "",
   })
 
   const handleChange = (e) => {
@@ -23,7 +23,7 @@ const Contact = () => {
     setFormValue((prevState) => {
       return {
         ...prevState,
-        [name]: value
+        [name]: value,
       }
     })
   }
@@ -38,7 +38,6 @@ const Contact = () => {
     emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
       (result) => {
         setIsSubmitted(true)
-        console.log(result.text)
       },
       (error) => {
         console.log(error.text)
@@ -47,87 +46,86 @@ const Contact = () => {
   }
 
   const onChange = (value) => {
-    console.log('Captcha value:', value)
     setIsVerified(true)
   }
 
   const { name, email, phone, message } = formValue
 
   return (
-    <section id='contact'>
-      <div className='container contact-container'>
-        <div className='contact-head'>
-          <ChatAlt2Icon className='section-head--icon' />
-          <h1 className='contact-head--title'>Contact Me</h1>
-          <p className='contact-head--text'>
+    <section id="contact">
+      <div className="container contact-container">
+        <div className="contact-head">
+          <ChatAlt2Icon className="section-head--icon" />
+          <h1 className="contact-head--title">Contact Me</h1>
+          <p className="contact-head--text">
             Let's see if we're a match and work together.
           </p>
         </div>
 
         {isSubmitted ? (
-          <div className='contact-thanks'>
+          <div className="contact-thanks">
             <p>Thank you for contacting me!</p>
           </div>
         ) : (
-          <form className='form' onSubmit={handleSubmit} ref={form}>
-            <div className='form-group'>
-              <label htmlFor='user_name'>Name</label>
+          <form className="form" onSubmit={handleSubmit} ref={form}>
+            <div className="form-group">
+              <label htmlFor="user_name">Name</label>
               <input
-                type='text'
-                name='user_name'
-                className='form-control'
-                placeholder='Enter name'
+                type="text"
+                name="user_name"
+                className="form-control"
+                placeholder="Enter name"
                 required
                 value={name}
                 onChange={handleChange}
               />
             </div>
-            <div className='form-group'>
-              <label htmlFor='user_email'>Email address</label>
+            <div className="form-group">
+              <label htmlFor="user_email">Email address</label>
               <input
-                type='email'
-                name='user_email'
-                className='form-control'
-                aria-describedby='emailHelp'
-                placeholder='Enter email'
+                type="email"
+                name="user_email"
+                className="form-control"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
                 required
                 value={email}
                 onChange={handleChange}
               />
-              <small id='emailHelp' className='form-text text-muted'>
+              <small id="emailHelp" className="form-text text-muted">
                 I'll never share your email with anyone else.
               </small>
             </div>
-            <div className='form-group'>
-              <label htmlFor='contact_number'>Phone</label>
+            <div className="form-group">
+              <label htmlFor="contact_number">Phone</label>
               <input
-                type='text'
-                name='contact_number'
-                className='form-control'
-                placeholder='Enter phone'
+                type="text"
+                name="contact_number"
+                className="form-control"
+                placeholder="Enter phone"
                 value={phone}
                 onChange={handleChange}
               />
             </div>
-            <div className='form-group'>
-              <label htmlFor='message'>Message</label>
+            <div className="form-group">
+              <label htmlFor="message">Message</label>
               <textarea
-                className='form-control'
-                name='message'
-                id='message'
-                rows='3'
-                placeholder='Enter message'
+                className="form-control"
+                name="message"
+                id="message"
+                rows="3"
+                placeholder="Enter message"
                 required
                 value={message}
                 onChange={handleChange}></textarea>
             </div>
             <ReCAPTCHA
-              sitekey='6LfLZjYhAAAAAH8hsfUFy3YK2Ckpzo40xv2DYteG'
+              sitekey="6LfLZjYhAAAAAH8hsfUFy3YK2Ckpzo40xv2DYteG"
               onChange={onChange}
             />
             <button
-              type='submit'
-              className='btn btn-primary'
+              type="submit"
+              className="btn btn-primary"
               disabled={!isVerified}>
               Send
             </button>
