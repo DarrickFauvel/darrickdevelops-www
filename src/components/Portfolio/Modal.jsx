@@ -1,24 +1,24 @@
-import ReactDom from 'react-dom'
-import TechStack from './TechStack'
+import ReactDom from "react-dom"
+import TechStack from "./TechStack"
 
 const OVERLAY_STYLES = {
-  position: 'fixed',
+  position: "fixed",
   top: 0,
   left: 0,
   right: 0,
   bottom: 0,
-  backgroundColor: 'rgba(0, 0, 0, 0.7)',
-  zIndex: 1000
+  backgroundColor: "rgba(0, 0, 0, 0.7)",
+  zIndex: 1000,
 }
 
 const MODAL_STYLES = {
-  position: 'fixed',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  backgroundColor: '#FFF',
-  padding: '50px',
-  zIndex: 1000
+  position: "fixed",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  backgroundColor: "#FFF",
+  padding: "50px",
+  zIndex: 1000,
 }
 
 const Modal = ({ children, project, isModalOpen, closeModal }) => {
@@ -26,43 +26,43 @@ const Modal = ({ children, project, isModalOpen, closeModal }) => {
 
   return ReactDom.createPortal(
     <>
-      <div className='modal' onClick={closeModal} />
+      <div className="modal" onClick={closeModal} />
 
-      <div className='modal-dialog'>
-        <div className='modal-header'>
-          <h4 className='modal-title'>{project.titleLong}</h4>
+      <div className="modal-dialog">
+        <div className="modal-header">
+          <h4 className="modal-title">{project.titleLong}</h4>
         </div>
-        <div className='modal-image'>
-          <img src={project.image} alt='' />
+        <div className="modal-image">
+          <img src={project.image} alt="" />
         </div>
-        <div className='modal-body'>
-          <p className='modal-stack'>
+        <div className="modal-body">
+          <p className="modal-stack">
             {project.stack.map((item) => {
               const lastItem = project.stack[project.stack.length - 1]
               return item !== lastItem ? `${item} · ` : item
             })}
           </p>
 
-          <ul className='modal-links'>
+          <ul className="modal-links">
             <li>
-              <a className='links-link' href={project.liveUrl} target='_blank'>
-                <img src='/netlify-logo-cropped.png' alt='' />
+              <a className="links-link" href={project.liveUrl} target="_blank">
+                <img src="/netlify-logo-cropped.png" alt="" />
                 <span>Demo</span>
               </a>
             </li>
             <li>
-              <a className='links-link' href={project.repoUrl} target='_blank'>
+              <a className="links-link" href={project.repoUrl} target="_blank">
                 <img
-                  className='github-logo'
-                  src='/github-icon-logo-png-transparent.png'
-                  alt=''
+                  className="github-logo"
+                  src="/github-icon-logo-png-transparent.png"
+                  alt=""
                 />
                 <span>Code</span>
               </a>
             </li>
           </ul>
 
-          <div className='modal-details'>
+          <div className="modal-details">
             <p>
               <span>Client</span>
               {project.client}
@@ -99,13 +99,13 @@ const Modal = ({ children, project, isModalOpen, closeModal }) => {
         </div>
         {/* END modal-body */}
 
-        <button className='btn' onClick={closeModal}>
+        <button className="btn" onClick={closeModal}>
           Close
         </button>
       </div>
       {/* END modal-dialog */}
     </>,
-    document.getElementById('portal')
+    document.getElementById("portal")
   )
 }
 
