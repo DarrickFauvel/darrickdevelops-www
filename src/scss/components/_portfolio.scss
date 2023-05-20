@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .projects {
   color: var(--gray-400);
@@ -213,17 +213,19 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: var(--size-3);
+  gap: var(--size-1);
   list-style: none;
   padding: 0;
 }
 
 .stack-item {
   display: inline-block;
-  background-color: var(--gray-6);
-  color: var(--gray-9);
+  flex-grow: 1;
+  /* background-color: var(--gray-8); */
+  border: 1px solid var(--gray-8);
+  color: var(--gray-4);
   padding-inline: var(--size-3);
-  border-radius: var(--radius-3);
+  border-radius: var(--radius-1);
   font-size: var(--font-size-0);
   font-weight: var(--font-weight-6);
   font-family: var(--font-mono);
