@@ -450,7 +450,7 @@ export const testimonials = [
 
 export const skills = [
   "HTML • CSS • JavaScript • ES6",
-  "React • Styled Components",
+  "React • Next.js • Styled Components",
   "Bootstrap • Tailwind • SASS • Git",
   "MongoDB • Express • Node.js",
 ]
