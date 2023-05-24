@@ -1,5 +1,7 @@
-import React, { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
+import React, { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+
+import classes from "./brand.module.css"
 
 const Brand = () => {
   const brandRef = useRef()
@@ -13,10 +15,8 @@ const Brand = () => {
   }, [])
 
   return (
-    <div className='navbar-brand' ref={brandRef}>
-      <a href='#about' className='navbar-brand__link'>
-        Darrick Fauvel
-      </a>
+    <div className={classes.brand} ref={brandRef}>
+      <a href="#about">Darrick Fauvel</a>
     </div>
   )
 }

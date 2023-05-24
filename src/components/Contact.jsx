@@ -3,9 +3,6 @@ import emailjs from "@emailjs/browser"
 import { ChatAlt2Icon } from "@heroicons/react/solid"
 import ReCAPTCHA from "react-google-recaptcha"
 
-// import Form from './Form'
-import Socials from "./Socials"
-
 const Contact = () => {
   const form = useRef()
   const [isVerified, setIsVerified] = useState(false)
@@ -131,8 +128,6 @@ const Contact = () => {
             </button>
           </form>
         )}
-
-        <Socials />
       </div>
     </section>
   )

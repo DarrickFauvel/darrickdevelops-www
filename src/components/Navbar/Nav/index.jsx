@@ -1,10 +1,13 @@
 import React, { useEffect, useRef } from "react"
 import { gsap } from "gsap"
-import NavLink from "./NavLink"
+
+import classes from "./nav.module.css"
+import NavLink from "../../shared/NavLink"
+
+import sectionTitles from "../../shared/sectionTitles"
 
 const Nav = () => {
   const navRef = useRef()
-  const sectionTitles = ["portfolio", "skills", "contact"]
 
   useEffect(() => {
     gsap.fromTo(
@@ -15,7 +18,7 @@ const Nav = () => {
   }, [])
 
   return (
-    <nav className="nav" ref={navRef}>
+    <nav className={classes.nav} ref={navRef}>
       {sectionTitles.map((sectionTitle) => (
         <NavLink sectionTitle={sectionTitle} key={sectionTitle} />
       ))}
