@@ -117,7 +117,7 @@ const Contact = () => {
                 onChange={handleChange}></textarea>
             </div>
             <ReCAPTCHA
-              sitekey="6LfLZjYhAAAAAH8hsfUFy3YK2Ckpzo40xv2DYteG"
+              sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
               onChange={onChange}
             />
             <button
