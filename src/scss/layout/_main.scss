@@ -1,18 +1,9 @@
-@use '../abstracts' as *;
-
-// .main {
-//   justify-self: center;
-//   align-self: center;
-// }
-
-// Testing autoprefixer
-// h1 {
-//   // This should be pink
-//   color: lch(65% 132 360);
-// }
+@use "../abstracts" as *;
 
 section {
-  @media (min-width: 768px) {
-    scroll-margin-top: 7rem;
+  padding-top: 3em;
+
+  @media (min-width: 640px) {
+    padding-top: 5.5rem;
   }
 }
