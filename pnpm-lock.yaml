@@ -10,9 +10,6 @@ dependencies:
   dompurify:
     specifier: ^2.3.8
     version: 2.3.8
-  gsap:
-    specifier: npm:@gsap/member@^3.11.1
-    version: /@gsap/member@3.11.1
   nodemailer:
     specifier: ^6.7.7
     version: 6.7.7
@@ -322,10 +319,6 @@ packages:
   /@emailjs/browser@3.6.2:
     resolution: {integrity: sha512-Swc8w+vwDX4XPy6tPegOFGSwHqNiEmEsIKbtAkqHo2WqnS0ORZUnnuZats2R3XqwfxNQD0F6RwnlVWHIMf6sCQ==}
     engines: {node: '>=14.0.0'}
-    dev: false
-
-  /@gsap/member@3.11.1:
-    resolution: {integrity: sha512-keyY22BHPkUyl23BltUmQmqW0L9+cPDN0t0oUTbTPEzqQ/hFrtaCGbVZxIwdreDlN5IZowdLDOdvb/X2uol08A==}
     dev: false
 
   /@heroicons/react@1.0.6(react@18.2.0):
