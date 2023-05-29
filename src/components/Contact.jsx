@@ -4,7 +4,9 @@ import { ChatAlt2Icon } from "@heroicons/react/solid"
 import ReCAPTCHA from "react-google-recaptcha"
 
 const Contact = () => {
-  const form = useRef()
+  const formRef = useRef(null)
+  const captchaRef = useRef(null)
+
   const [isVerified, setIsVerified] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [formValue, setFormValue] = useState({
@@ -27,12 +29,14 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const token = captchaRef.current.getValue()
+    captchaRef.current.reset()
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
-    emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
+    emailjs.sendForm(serviceId, templateId, formRef.current, publicKey).then(
       (result) => {
         setIsSubmitted(true)
       },
@@ -64,7 +68,7 @@ const Contact = () => {
             <p>Thank you for contacting me!</p>
           </div>
         ) : (
-          <form className="form" onSubmit={handleSubmit} ref={form}>
+          <form className="form" onSubmit={handleSubmit} ref={formRef}>
             <div className="form-group">
               <label htmlFor="user_name">Name</label>
               <input
@@ -119,6 +123,7 @@ const Contact = () => {
             <ReCAPTCHA
               sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
               onChange={onChange}
+              ref={captchaRef}
             />
             <button
               type="submit"
