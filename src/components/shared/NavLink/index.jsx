@@ -10,7 +10,7 @@ const NavLink = ({ sectionTitle, setShowMenu }) => {
     <a
       href={link}
       className={classes.navLink}
-      onClick={() => setShowMenu(false)}>
+      onClick={setShowMenu ? () => setShowMenu(false) : null}>
       {title}
     </a>
   )
