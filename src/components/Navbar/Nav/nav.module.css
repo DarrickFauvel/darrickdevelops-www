@@ -6,7 +6,7 @@
   font-size: var(--font-size-1);
   gap: var(--size-4);
 
-  @media (min-width: 500px) {
+  @media (min-width: 520px) {
     display: flex;
 
     margin-right: auto;
