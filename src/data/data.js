@@ -383,8 +383,8 @@ export const projects = [
   },
   {
     id: 15,
-    title: "darrickdevelops.com",
-    titleLong: "darrickdevelops.com",
+    title: "Darrick Develops",
+    titleLong: "Darrick Develops",
     subtitle: "",
     client: "Darrick Develops",
     category: ["react"],
