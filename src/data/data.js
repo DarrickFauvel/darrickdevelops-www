@@ -41,7 +41,7 @@ export const tabs = [
     category: "react",
     description: "React apps",
   },
-]
+];
 
 export const projects = [
   {
@@ -383,10 +383,10 @@ export const projects = [
   },
   {
     id: 15,
-    title: "darrickfauvel.com",
-    titleLong: "darrickfauvel.com",
+    title: "darrickdevelops.com",
+    titleLong: "darrickdevelops.com",
     subtitle: "",
-    client: "Darrick Fauvel",
+    client: "Darrick Develops",
     category: ["react"],
     stack: ["HTML", "Sass", "CSS Open Props", "React", "JSON", "Vite"],
     description: {
@@ -400,8 +400,8 @@ export const projects = [
     image:
       "https://raw.githubusercontent.com/DarrickFauvel/www-v1-r2/949d33ce3c3e0495b3f2f31043bb71bcc8604b45/screenshot.png",
     solutionUrl: "",
-    liveUrl: "https://darrickfauvel.com/",
-    repoUrl: "https://github.com/DarrickFauvel/www-v1-r2",
+    liveUrl: "https://darrickdevelops.com/",
+    repoUrl: "https://github.com/DarrickFauvel/darrickdevelops-www",
     isFeatured: true,
   },
   {
@@ -429,7 +429,7 @@ export const projects = [
     repoUrl: "https://github.com/DarrickFauvel/redtool",
     isFeatured: true,
   },
-]
+];
 
 export const testimonials = [
   {
@@ -446,11 +446,11 @@ export const testimonials = [
     name: "Ruben Alvarez",
     company: "Dooble.io",
   },
-]
+];
 
 export const skills = [
   "HTML • CSS • JavaScript • ES6",
   "React • Next.js • Styled Components",
   "Bootstrap • Tailwind • SASS • Git",
   "MongoDB • Express • Node.js",
-]
+];
