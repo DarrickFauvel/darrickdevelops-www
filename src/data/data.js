@@ -397,8 +397,7 @@ export const projects = [
       solution: "I setup a JSON data file containing all of my project info.",
       future: "I will be putting the data into a database API.",
     },
-    image:
-      "https://raw.githubusercontent.com/DarrickFauvel/www-v1-r2/949d33ce3c3e0495b3f2f31043bb71bcc8604b45/screenshot.png",
+    image: "/darrickdevelops-www.png",
     solutionUrl: "",
     liveUrl: "https://darrickdevelops.com/",
     repoUrl: "https://github.com/DarrickFauvel/darrickdevelops-www",
