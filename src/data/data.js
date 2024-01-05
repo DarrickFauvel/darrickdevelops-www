@@ -41,7 +41,7 @@ export const tabs = [
     category: "react",
     description: "React apps",
   },
-];
+]
 
 export const projects = [
   {
@@ -65,7 +65,7 @@ export const projects = [
     solutionUrl: "",
     liveUrl: "https://darrickfauvel.github.io/petri-paint/",
     repoUrl: "https://github.com/DarrickFauvel/petri-paint",
-    isFeatured: true,
+    isFeatured: false,
   },
   {
     id: 2,
@@ -207,7 +207,7 @@ export const projects = [
       "https://www.frontendmentor.io/solutions/time-tracking-dashboard-react-and-sass-ZXBXih2g5",
     liveUrl: "https://fem06-time-tracking-dashborad-drrck.netlify.app/",
     repoUrl: "https://github.com/DarrickFauvel/fem06-time-tracking-dashboard",
-    isFeatured: true,
+    isFeatured: false,
   },
 
   {
@@ -305,7 +305,7 @@ export const projects = [
       "https://www.frontendmentor.io/solutions/faq-accordion-card-htmlcssjs-rzpYTV0Ig",
     liveUrl: "https://fem04-faq-accordion-card-drrck.netlify.app/",
     repoUrl: "https://github.com/DarrickFauvel/fem04-faq-accordion-card",
-    isFeatured: true,
+    isFeatured: false,
   },
   {
     id: 12,
@@ -428,7 +428,39 @@ export const projects = [
     repoUrl: "https://github.com/DarrickFauvel/redtool",
     isFeatured: true,
   },
-];
+  {
+    id: 17,
+    title: "YumYumYes!",
+    titleLong: "YumYumYes! Recipes",
+    subtitle: "Web app to help users search and save recipes",
+    client: "Chingu",
+    category: ["react"],
+    stack: [
+      "HTML",
+      "CSS",
+      "React",
+      "React Router",
+      "Tailwind CSS",
+      "Vite",
+      "Headless UI",
+    ],
+    description: {
+      goal: "Use the Tasty API to create an app that will help anyone interested in creating dishes and flavours to explore recipes in novel ways.",
+      inspiration: "",
+      challenge:
+        "Collaboratively work remotely with multiple designers and developers to produce this project.",
+      solution:
+        "We used agile methodology to communicate and collaborate in weekly sprints.",
+      future: "",
+    },
+    image:
+      "https://raw.githubusercontent.com/chingu-voyages/v46-tier2-team-19/development/public/screenshots/screenshot-home-dev.png",
+    solutionUrl: "",
+    liveUrl: "https://yumyumyes.com/",
+    repoUrl: "https://github.com/chingu-voyages/v46-tier2-team-19",
+    isFeatured: true,
+  },
+]
 
 export const testimonials = [
   {
@@ -445,11 +477,11 @@ export const testimonials = [
     name: "Ruben Alvarez",
     company: "Dooble.io",
   },
-];
+]
 
 export const skills = [
   "HTML • CSS • JavaScript • ES6",
   "React • Next.js • Styled Components",
   "Bootstrap • Tailwind • SASS • Git",
   "MongoDB • Express • Node.js",
-];
+]
